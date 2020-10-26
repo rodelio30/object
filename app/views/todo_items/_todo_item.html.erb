@@ -1,0 +1,8 @@
+  <tr>
+    <td>
+      <p>  <%= todo_item.content %> </p>
+    </td>
+    <td>
+      <%= link_to "Delete", todo_list_todo_item_path(@todo_list, todo_item.id), method: :delete, data: { confirm: "Are you sure about that" }, class: 'btn btn-outline-warning' %>
+    </td>
+  </tr>
