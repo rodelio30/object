@@ -16,8 +16,8 @@ ActiveRecord::Schema.define(version: 2020_10_24_002232) do
   enable_extension "plpgsql"
 
   create_table "todo_lists", force: :cascade do |t|
-    t.string "title", null:false
-    t.text "description", null:false
+    t.string "title"
+    t.text "description"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
