@@ -1,23 +1,27 @@
 <% if todo_item.completed? %>
 <tr>
-<td>
-<%= link_to complete_todo_list_todo_item_path(@todo_list, todo_item.id), method: :patch do %>
-  <span class="oi oi-check"></span>
-<% end %>
-<strike><%= todo_item.content %></strike>
-</td>
-<td>
-<%= link_to "Delete", todo_list_todo_item_path(@todo_list, todo_item.id), method: :delete, data: { confirm: "Are you sure about that" }, class: 'btn btn-outline-warning' %>
-</td>
+  <td>
+    <%= link_to "√", complete_todo_list_todo_item_path(@todo_list, todo_item.id), method: :patch %>
+    </td>
+    <td>
+      <p style="opacity:0.4"><strike><%= todo_item.content %></strike>
+      </p>
+  </td>
+  <td>
+    <%= link_to "Delete", todo_list_todo_item_path(@todo_list, todo_item.id), method: :delete, data: { confirm: "Are you sure about that" }, class: 'btn btn-outline-warning' %>
+  </td>
 </tr>
+
 <% else %>
 <tr>
-<td>
-<%= link_to "Mark as Complete", complete_todo_list_todo_item_path(@todo_list, todo_item.id), method: :patch %>
-<%= todo_item.content %>
-</td>
-<td>
-<%= link_to "Delete", todo_list_todo_item_path(@todo_list, todo_item.id), method: :delete, data: { confirm: "Are you sure about that" }, class: 'btn btn-outline-warning' %>
-</td>
+  <td>
+    <%= link_to "√", complete_todo_list_todo_item_path(@todo_list, todo_item.id), method: :patch %>
+  </td>
+  <td>
+      <%= todo_item.content %>
+    </td>
+  <td>
+    <%= link_to "Delete", todo_list_todo_item_path(@todo_list, todo_item.id), method: :delete, data: { confirm: "Are you sure about that" }, class: 'btn btn-outline-warning' %>
+  </td>
 </tr>
 <% end %>

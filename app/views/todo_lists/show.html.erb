@@ -2,6 +2,7 @@
 <table class="table table-striped table-dark">
   <thead>
     <tr>
+      <th scope="col">Update</th>
       <th scope="col">Title : <%= @todo_list.title %></th>
       <th scope="col">Description : <%= @todo_list.description %></th>
 
@@ -10,7 +11,7 @@
   <tbody>
     <%= render @todo_list.todo_items %>
     <%= render "todo_items/form"%>
-    <td colspan="2"><%= link_to 'Back', todo_lists_path, class: "btn btn-outline-primary" %>
+    <td colspan="3"><%= link_to 'Back', todo_lists_path, class: "btn btn-outline-primary" %>
     <%= link_to 'Delete', todo_list_path(@todo_list), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-outline-primary" %>
     <%= link_to 'Edit', edit_todo_list_path(@todo_list), class: "btn btn-outline-primary" %></td>
   </tbody>
