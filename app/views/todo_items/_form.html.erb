@@ -1,10 +1,11 @@
 <%= form_for ([@todo_list, @todo_list.todo_items.build]) do |f| %>
 <tr>
-<td>
-  <%= f.text_field :content, placeholder: "New Todo", class: 'form-control', autofocus:true %>
+<td colspan="2">
+  <div class="container">
+  <%= f.text_field :content, placeholder: "New Todo", class: 'col-12 form-control input-sm', autofocus:true, required:true %>
+  <%= f.submit :Submit, class: 'btn btn-outline-primary', style: 'float:right'%>
+  </div>
 </td>
-<td>
-  <%= f.submit :Submit, class: 'btn btn-outline-primary' %>
-</td>
+
 </tr>
 <% end %>
