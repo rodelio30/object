@@ -1,7 +1,9 @@
 <% if todo_item.completed? %>
 <tr>
 <td>
-<%= link_to "Mark as Complete", complete_todo_list_todo_item_path(@todo_list, todo_item.id), method: :patch %>
+<%= link_to complete_todo_list_todo_item_path(@todo_list, todo_item.id), method: :patch do %>
+  <span class="oi oi-check"></span>
+<% end %>
 <strike><%= todo_item.content %></strike>
 </td>
 <td>
